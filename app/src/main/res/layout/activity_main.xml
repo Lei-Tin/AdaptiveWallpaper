@@ -49,15 +49,30 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/descriptionText">
 
-            <TextView
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/wallpaper_light"
-                android:gravity="bottom|center_horizontal"
-                android:padding="16dp"
-                android:text="@string/light_preview"
-                android:textColor="@color/preview_light_text"
-                android:textStyle="bold" />
+                android:layout_height="match_parent">
+
+                <com.example.adaptivewallpaper.WallpaperPreviewView
+                    android:id="@+id/lightPreviewImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/wallpaper_light"
+                    android:clickable="true"
+                    android:contentDescription="@string/choose_light_wallpaper"
+                    android:focusable="true" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/preview_label_background"
+                    android:gravity="center"
+                    android:padding="14dp"
+                    android:text="@string/light_preview"
+                    android:textColor="@color/preview_dark_text"
+                    android:textStyle="bold" />
+            </FrameLayout>
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
@@ -71,16 +86,54 @@
             app:layout_constraintStart_toEndOf="@id/lightPreviewCard"
             app:layout_constraintTop_toTopOf="@id/lightPreviewCard">
 
-            <TextView
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/wallpaper_dark"
-                android:gravity="bottom|center_horizontal"
-                android:padding="16dp"
-                android:text="@string/dark_preview"
-                android:textColor="@color/preview_dark_text"
-                android:textStyle="bold" />
+                android:layout_height="match_parent">
+
+                <com.example.adaptivewallpaper.WallpaperPreviewView
+                    android:id="@+id/darkPreviewImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/wallpaper_dark"
+                    android:clickable="true"
+                    android:contentDescription="@string/choose_dark_wallpaper"
+                    android:focusable="true" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/preview_label_background"
+                    android:gravity="center"
+                    android:padding="14dp"
+                    android:text="@string/dark_preview"
+                    android:textColor="@color/preview_dark_text"
+                    android:textStyle="bold" />
+            </FrameLayout>
         </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/chooseLightWallpaperButton"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="6dp"
+            android:text="@string/choose_image"
+            app:layout_constraintEnd_toStartOf="@id/chooseDarkWallpaperButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lightPreviewCard" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/chooseDarkWallpaperButton"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:text="@string/choose_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/chooseLightWallpaperButton"
+            app:layout_constraintTop_toTopOf="@id/chooseLightWallpaperButton" />
 
         <TextView
             android:id="@+id/statusText"
@@ -91,7 +144,7 @@
             android:textAppearance="?attr/textAppearanceBodyMedium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/lightPreviewCard"
+            app:layout_constraintTop_toBottomOf="@id/chooseLightWallpaperButton"
             tools:text="当前：浅色模式 · 尚未启用" />
 
         <com.google.android.material.button.MaterialButton
