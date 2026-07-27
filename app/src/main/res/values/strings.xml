@@ -1,9 +1,12 @@
 <resources>
     <string name="app_name">AdaptiveWallpaper</string>
     <string name="main_title">自适应壁纸</string>
-    <string name="main_description">壁纸会跟随 Android 的浅色与深色模式自动切换。</string>
+    <string name="main_description">分别选择浅色与深色图片，壁纸会跟随 Android 模式自动切换。</string>
     <string name="light_preview">浅色</string>
     <string name="dark_preview">深色</string>
+    <string name="choose_image">选择图片</string>
+    <string name="choose_light_wallpaper">选择浅色模式壁纸</string>
+    <string name="choose_dark_wallpaper">选择深色模式壁纸</string>
     <string name="enable_wallpaper">启用自适应壁纸</string>
     <string name="current_mode_light">浅色模式</string>
     <string name="current_mode_dark">深色模式</string>
@@ -12,4 +15,17 @@
     <string name="status_format">当前：%1$s · %2$s</string>
     <string name="wallpaper_name">自适应明暗壁纸</string>
     <string name="wallpaper_description">跟随系统浅色与深色模式自动切换的壁纸</string>
+    <string name="edit_light_wallpaper">编辑浅色壁纸</string>
+    <string name="edit_dark_wallpaper">编辑深色壁纸</string>
+    <string name="crop_gesture_hint">拖动调整位置，双指缩放图片</string>
+    <string name="scale_mode_hint">预览将按所选方式显示</string>
+    <string name="scale_crop">裁剪填充</string>
+    <string name="scale_fit">完整显示</string>
+    <string name="scale_stretch">拉伸</string>
+    <string name="cancel">取消</string>
+    <string name="save_wallpaper">保存壁纸</string>
+    <string name="wallpaper_preview_description">壁纸裁剪预览</string>
+    <string name="image_load_failed">无法读取这张图片，请尝试其他图片</string>
+    <string name="wallpaper_saved">壁纸已保存</string>
+    <string name="wallpaper_save_failed">保存失败，请重新选择图片</string>
 </resources>
