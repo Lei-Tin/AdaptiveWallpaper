@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">AdaptiveWallpaper</string>
+    <string name="main_title">自适应壁纸</string>
+    <string name="main_description">壁纸会跟随 Android 的浅色与深色模式自动切换。</string>
+    <string name="light_preview">浅色</string>
+    <string name="dark_preview">深色</string>
+    <string name="enable_wallpaper">启用自适应壁纸</string>
+    <string name="current_mode_light">浅色模式</string>
+    <string name="current_mode_dark">深色模式</string>
+    <string name="wallpaper_enabled">已启用</string>
+    <string name="wallpaper_not_enabled">尚未启用</string>
+    <string name="status_format">当前：%1$s · %2$s</string>
+    <string name="wallpaper_name">自适应明暗壁纸</string>
+    <string name="wallpaper_description">跟随系统浅色与深色模式自动切换的壁纸</string>
 </resources>
