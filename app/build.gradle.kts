@@ -12,7 +12,7 @@ val keystoreProperties = Properties().apply {
 }
 
 android {
-    namespace = "com.example.adaptivewallpaper"
+    namespace = "io.github.leitin.adaptivewallpaper"
     compileSdk {
         version = release(36) {
             minorApiLevel = 1
@@ -20,7 +20,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.adaptivewallpaper"
+        applicationId = "io.github.leitin.adaptivewallpaper"
         minSdk = 24
         targetSdk = 36
         versionCode = 1

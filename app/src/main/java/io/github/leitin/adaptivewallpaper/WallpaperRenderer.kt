@@ -1,4 +1,4 @@
-package com.example.adaptivewallpaper
+package io.github.leitin.adaptivewallpaper
 
 import android.graphics.Bitmap
 import android.graphics.Canvas

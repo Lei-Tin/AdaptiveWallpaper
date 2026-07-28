@@ -1,4 +1,4 @@
-package com.example.adaptivewallpaper
+package io.github.leitin.adaptivewallpaper
 
 import android.content.res.Configuration
 

@@ -1,4 +1,4 @@
-package com.example.adaptivewallpaper
+package io.github.leitin.adaptivewallpaper
 
 enum class WallpaperSlot(val storageName: String) {
     LIGHT("light"),

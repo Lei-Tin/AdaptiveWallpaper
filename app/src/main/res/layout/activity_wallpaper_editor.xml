@@ -45,7 +45,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/gestureHint">
 
-        <com.example.adaptivewallpaper.WallpaperPreviewView
+        <io.github.leitin.adaptivewallpaper.WallpaperPreviewView
             android:id="@+id/wallpaperPreview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

@@ -1,4 +1,4 @@
-package com.example.adaptivewallpaper
+package io.github.leitin.adaptivewallpaper
 
 import org.junit.Test
 

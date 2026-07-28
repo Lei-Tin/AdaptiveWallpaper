@@ -53,7 +53,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <com.example.adaptivewallpaper.WallpaperPreviewView
+                <io.github.leitin.adaptivewallpaper.WallpaperPreviewView
                     android:id="@+id/lightPreviewImage"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -90,7 +90,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <com.example.adaptivewallpaper.WallpaperPreviewView
+                <io.github.leitin.adaptivewallpaper.WallpaperPreviewView
                     android:id="@+id/darkPreviewImage"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
