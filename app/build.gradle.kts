@@ -1,5 +1,14 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
+}
+
+val keystorePropertiesFile = rootProject.file("keystore.properties")
+val keystoreProperties = Properties().apply {
+    if (keystorePropertiesFile.isFile) {
+        keystorePropertiesFile.inputStream().use(::load)
+    }
 }
 
 android {
@@ -20,8 +29,30 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        create("release") {
+            if (keystorePropertiesFile.isFile) {
+                storeFile = rootProject.file(
+                    requireNotNull(keystoreProperties.getProperty("storeFile")) {
+                        "keystore.properties 缺少 storeFile"
+                    },
+                )
+                storePassword = requireNotNull(keystoreProperties.getProperty("storePassword")) {
+                    "keystore.properties 缺少 storePassword"
+                }
+                keyAlias = requireNotNull(keystoreProperties.getProperty("keyAlias")) {
+                    "keystore.properties 缺少 keyAlias"
+                }
+                keyPassword = requireNotNull(keystoreProperties.getProperty("keyPassword")) {
+                    "keystore.properties 缺少 keyPassword"
+                }
+            }
+        }
+    }
+
     buildTypes {
         release {
+            signingConfig = signingConfigs.getByName("release")
             optimization {
                 enable = false
             }
