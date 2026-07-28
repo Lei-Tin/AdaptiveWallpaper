@@ -1,6 +1,20 @@
 # AdaptiveWallpaper
 
+<p align="center">
+  <img src="docs/images/app-icon.png" alt="AdaptiveWallpaper 图标" width="144" />
+</p>
+
 一款轻量的 Android 动态壁纸应用，可根据系统浅色/深色模式自动切换壁纸。
+
+## 演示
+
+<p align="center">
+  <img src="docs/images/app-main.png" alt="AdaptiveWallpaper 设置界面" width="30%" />
+  <img src="docs/images/home-light.png" alt="浅色模式桌面壁纸" width="30%" />
+  <img src="docs/images/home-dark.png" alt="深色模式桌面壁纸" width="30%" />
+</p>
+
+<p align="center"><sub>设置界面 · 浅色模式 · 深色模式</sub></p>
 
 ## 功能
 
