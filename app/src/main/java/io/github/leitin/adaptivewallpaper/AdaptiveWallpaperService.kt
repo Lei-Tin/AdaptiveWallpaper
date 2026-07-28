@@ -1,10 +1,12 @@
 package io.github.leitin.adaptivewallpaper
 
+import android.app.UiModeManager
 import android.content.SharedPreferences
 import android.content.res.Configuration
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
+import android.os.Build
 import android.os.Handler
 import android.os.Looper
 import android.service.wallpaper.WallpaperService
@@ -14,6 +16,7 @@ import androidx.core.content.ContextCompat
 class AdaptiveWallpaperService : WallpaperService() {
     private val engines = mutableSetOf<AdaptiveWallpaperEngine>()
     private val mainHandler = Handler(Looper.getMainLooper())
+    private val uiModeManager by lazy { getSystemService(UiModeManager::class.java) }
     private lateinit var wallpaperStore: WallpaperStore
     private val preferenceListener = SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
         val changedSlot = WallpaperSlot.entries.find { WallpaperStore.versionKey(it) == key }
@@ -43,24 +46,43 @@ class AdaptiveWallpaperService : WallpaperService() {
     }
 
     private inner class AdaptiveWallpaperEngine : Engine() {
-        private var isDarkMode = isDarkMode(resources.configuration.uiMode)
+        private var darkModeActive = isDarkMode(resources.configuration.uiMode)
+        private var wallpaperVisible = false
+        private var surfaceAvailable = false
         private var cachedBitmap: Bitmap? = null
         private var cachedSlot: WallpaperSlot? = null
         private var cachedVersion = -1
         private var cachedWidth = 0
         private var cachedHeight = 0
 
+        private val themeCheckRunnable = object : Runnable {
+            override fun run() {
+                if (!wallpaperVisible || !surfaceAvailable) return
+                if (refreshThemeMode()) drawWallpaper()
+                mainHandler.postDelayed(this, THEME_CHECK_INTERVAL_MS)
+            }
+        }
+
         override fun onCreate(surfaceHolder: SurfaceHolder) {
             super.onCreate(surfaceHolder)
             setTouchEventsEnabled(false)
+            refreshThemeMode()
         }
 
         override fun onVisibilityChanged(visible: Boolean) {
-            if (visible) drawWallpaper()
+            wallpaperVisible = visible
+            updateThemePolling()
+            if (visible && surfaceAvailable) {
+                refreshThemeMode()
+                drawWallpaper()
+            }
         }
 
         override fun onSurfaceCreated(holder: SurfaceHolder) {
             super.onSurfaceCreated(holder)
+            surfaceAvailable = true
+            refreshThemeMode()
+            updateThemePolling()
             drawWallpaper()
         }
 
@@ -71,15 +93,21 @@ class AdaptiveWallpaperService : WallpaperService() {
             height: Int,
         ) {
             super.onSurfaceChanged(holder, format, width, height)
+            refreshThemeMode()
             drawWallpaper()
         }
 
         override fun onSurfaceDestroyed(holder: SurfaceHolder) {
+            surfaceAvailable = false
+            updateThemePolling()
             clearBitmapCache()
             super.onSurfaceDestroyed(holder)
         }
 
         override fun onDestroy() {
+            wallpaperVisible = false
+            surfaceAvailable = false
+            mainHandler.removeCallbacks(themeCheckRunnable)
             engines.remove(this)
             clearBitmapCache()
             super.onDestroy()
@@ -87,8 +115,9 @@ class AdaptiveWallpaperService : WallpaperService() {
 
         fun onThemeChanged(configuration: Configuration) {
             val newDarkMode = isDarkMode(configuration.uiMode)
-            if (newDarkMode != isDarkMode) {
-                isDarkMode = newDarkMode
+            if (newDarkMode != darkModeActive) {
+                darkModeActive = newDarkMode
+                clearBitmapCache()
                 drawWallpaper()
             }
         }
@@ -98,6 +127,27 @@ class AdaptiveWallpaperService : WallpaperService() {
                 clearBitmapCache()
                 drawWallpaper()
             }
+        }
+
+        private fun updateThemePolling() {
+            mainHandler.removeCallbacks(themeCheckRunnable)
+            if (wallpaperVisible && surfaceAvailable) {
+                mainHandler.postDelayed(themeCheckRunnable, THEME_CHECK_INTERVAL_MS)
+            }
+        }
+
+        private fun refreshThemeMode(): Boolean {
+            val configuration = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                displayContext?.resources?.configuration ?: resources.configuration
+            } else {
+                resources.configuration
+            }
+            val newDarkMode = resolveDarkMode(configuration.uiMode, uiModeManager.nightMode)
+            if (newDarkMode == darkModeActive) return false
+
+            darkModeActive = newDarkMode
+            clearBitmapCache()
+            return true
         }
 
         private fun drawWallpaper() {
@@ -177,10 +227,11 @@ class AdaptiveWallpaperService : WallpaperService() {
         }
 
         private fun currentSlot(): WallpaperSlot =
-            if (isDarkMode) WallpaperSlot.DARK else WallpaperSlot.LIGHT
+            if (darkModeActive) WallpaperSlot.DARK else WallpaperSlot.LIGHT
     }
 
     companion object {
         private const val MAX_DECODE_DIMENSION = 4096
+        private const val THEME_CHECK_INTERVAL_MS = 5_000L
     }
 }
