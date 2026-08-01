@@ -14,7 +14,7 @@ val keystoreProperties = Properties().apply {
 android {
     namespace = "com.shouyihung.adaptivewallpaper"
     compileSdk {
-        version = release(36) {
+        version = release(37) {
             minorApiLevel = 1
         }
     }
