@@ -9,9 +9,11 @@
 A lightweight, open-source Android live wallpaper that automatically switches between user-selected images when Android changes between light and dark mode.
 
 <p align="center">
-  <a href="https://github.com/Lei-Tin/AdaptiveWallpaper/releases/latest/download/AdaptiveWallpaper.apk"><strong>Download the latest APK</strong></a>
+  <a href="https://adaptivewallpaper.shouyihung.com/download/AdaptiveWallpaper.apk"><strong>Download the latest APK</strong></a>
   ·
-  <a href="https://github.com/Lei-Tin/AdaptiveWallpaper/releases/latest">View releases</a>
+  <a href="https://adaptivewallpaper.shouyihung.com">Official website</a>
+  ·
+  <a href="https://github.com/Lei-Tin/AdaptiveWallpaper/releases/latest">GitHub mirror</a>
 </p>
 
 ## Demo
@@ -42,12 +44,12 @@ A lightweight, open-source Android live wallpaper that automatically switches be
 
 ## Install
 
-1. [Download the latest APK](https://github.com/Lei-Tin/AdaptiveWallpaper/releases/latest/download/AdaptiveWallpaper.apk).
+1. [Download the latest APK from Cloudflare](https://adaptivewallpaper.shouyihung.com/download/AdaptiveWallpaper.apk).
 2. Open `AdaptiveWallpaper.apk` after the download finishes.
 3. If Android asks, allow your browser or file manager to install unknown apps.
 4. Install future versions over the existing app. Uninstalling first removes the images and settings stored by the app.
 
-GitHub installations do not update automatically. Download the latest APK again to install an update.
+APK installations do not update automatically. Download the latest APK again to install an update.
 
 ### Migrating from v1.x
 
@@ -69,7 +71,7 @@ AdaptiveWallpaper requests no network permission and includes no analytics or ad
 
 ## Verify a download
 
-Every GitHub Release includes a SHA-256 checksum file. Official APKs use this signing certificate:
+The website provides a [SHA-256 checksum file](https://adaptivewallpaper.shouyihung.com/download/AdaptiveWallpaper.apk.sha256), and every GitHub Release keeps a matching checksum. Official APKs use this signing certificate:
 
 ```text
 Package: com.shouyihung.adaptivewallpaper

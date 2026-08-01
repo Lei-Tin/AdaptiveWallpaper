@@ -9,9 +9,11 @@
 一款轻量、开源的 Android 动态壁纸应用，可根据系统浅色/深色模式自动切换用户选择的壁纸。
 
 <p align="center">
-  <a href="https://github.com/Lei-Tin/AdaptiveWallpaper/releases/latest/download/AdaptiveWallpaper.apk"><strong>下载最新版 APK</strong></a>
+  <a href="https://adaptivewallpaper.shouyihung.com/download/AdaptiveWallpaper.apk"><strong>下载最新版 APK</strong></a>
   ·
-  <a href="https://github.com/Lei-Tin/AdaptiveWallpaper/releases/latest">查看 Release</a>
+  <a href="https://adaptivewallpaper.shouyihung.com">访问官网</a>
+  ·
+  <a href="https://github.com/Lei-Tin/AdaptiveWallpaper/releases/latest">GitHub 镜像</a>
 </p>
 
 ## 演示
@@ -42,12 +44,12 @@
 
 ## 安装
 
-1. [下载最新版 APK](https://github.com/Lei-Tin/AdaptiveWallpaper/releases/latest/download/AdaptiveWallpaper.apk)。
+1. [从 Cloudflare 下载最新版 APK](https://adaptivewallpaper.shouyihung.com/download/AdaptiveWallpaper.apk)。
 2. 打开下载完成的 `AdaptiveWallpaper.apk`。
 3. 如果 Android 提示，请允许当前浏览器或文件管理器“安装未知应用”。
 4. 安装更新时直接覆盖旧版本即可；请勿先卸载，否则 App 内保存的图片和设置会被删除。
 
-GitHub 安装版本不会自动更新。新版本发布后，可再次下载最新 APK 覆盖安装。
+APK 安装版本不会自动更新。新版本发布后，可再次下载最新 APK 覆盖安装。
 
 ### 从 v1.x 迁移
 
@@ -69,7 +71,7 @@ AdaptiveWallpaper 不申请网络权限，不包含分析或广告 SDK。用户�
 
 ## 验证下载
 
-每个 GitHub Release 同时提供 SHA-256 校验文件。正式 APK 使用以下证书签名：
+官网提供 [SHA-256 校验文件](https://adaptivewallpaper.shouyihung.com/download/AdaptiveWallpaper.apk.sha256)，每个 GitHub Release 也保留对应校验文件。正式 APK 使用以下证书签名：
 
 ```text
 Package: com.shouyihung.adaptivewallpaper

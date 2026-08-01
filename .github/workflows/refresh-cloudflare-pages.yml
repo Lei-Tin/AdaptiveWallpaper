@@ -1,0 +1,36 @@
+name: Refresh Cloudflare Pages after release
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+
+      - name: Update website release version
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+        run: |
+          RELEASE_VERSION="${RELEASE_TAG#v}"
+          printf '%s\n' "$RELEASE_VERSION" > site/release-version.txt
+
+      - name: Trigger Cloudflare Pages rebuild
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- site/release-version.txt; then
+            git commit --allow-empty -m "Refresh website for ${{ github.event.release.tag_name }}"
+          else
+            git add site/release-version.txt
+            git commit -m "Refresh website for ${{ github.event.release.tag_name }}"
+          fi
+          git push origin HEAD:main
