@@ -13,3 +13,6 @@ local.properties
 keystore.properties
 *.jks
 *.keystore
+
+# Cloudflare Pages local build output
+/site/dist/

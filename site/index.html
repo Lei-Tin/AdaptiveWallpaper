@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="zh-CN" data-language="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#111425" />
+    <meta
+      name="description"
+      content="AdaptiveWallpaper：根据 Android 浅色与深色模式自动切换壁纸的开源应用。"
+    />
+    <title>AdaptiveWallpaper — 随系统明暗模式切换壁纸</title>
+    <link rel="icon" href="/assets/app-icon.png" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="AdaptiveWallpaper home">
+        <img src="/assets/app-icon.png" alt="" width="42" height="42" />
+        <span>AdaptiveWallpaper</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#features"><span data-zh>功能</span><span data-en>Features</span></a>
+        <a href="#install"><span data-zh>安装</span><span data-en>Install</span></a>
+        <a href="/privacy/"><span data-zh>隐私</span><span data-en>Privacy</span></a>
+        <button class="language-toggle" type="button" data-language-toggle>
+          <span data-zh>EN</span><span data-en>中文</span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="status-dot"></span>
+            <span data-zh>开源 · 离线 · Android 7.0+</span>
+            <span data-en>Open source · Offline · Android 7.0+</span>
+          </div>
+          <h1>
+            <span data-zh>让壁纸也跟随<br /><em>明暗模式</em>切换</span>
+            <span data-en>Wallpaper that follows<br />your <em>system theme</em></span>
+          </h1>
+          <p class="hero-description">
+            <span data-zh>
+              分别选择浅色和深色壁纸。系统主题变化时，AdaptiveWallpaper 会自动、安静地完成切换。
+            </span>
+            <span data-en>
+              Choose a wallpaper for light mode and another for dark mode. AdaptiveWallpaper switches them quietly when your system theme changes.
+            </span>
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="/download/AdaptiveWallpaper.apk" download>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 20h14" /></svg>
+              <span data-zh>下载 APK</span><span data-en>Download APK</span>
+            </a>
+            <a class="button button-secondary" href="#install">
+              <span data-zh>查看安装方法</span><span data-en>Installation guide</span>
+            </a>
+          </div>
+          <div class="release-meta">
+            <span>v2.0.0</span>
+            <span>5.3 MB</span>
+            <span data-zh>2026 年 8 月 1 日</span><span data-en>August 1, 2026</span>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="AdaptiveWallpaper app preview">
+          <div class="mode-card mode-card-light">
+            <span data-zh>浅色</span><span data-en>Light</span>
+          </div>
+          <div class="phone-frame">
+            <img src="/assets/app-main.png" alt="AdaptiveWallpaper settings screen" />
+          </div>
+          <div class="mode-card mode-card-dark">
+            <span data-zh>深色</span><span data-en>Dark</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust-strip" aria-label="Product highlights">
+        <div><strong data-zh>零网络权限</strong><strong data-en>No network permission</strong><span data-zh>图片只留在你的设备</span><span data-en>Your images stay on-device</span></div>
+        <div><strong data-zh>自由裁剪</strong><strong data-en>Flexible framing</strong><span data-zh>填充、完整显示或拉伸</span><span data-en>Fill, fit, or stretch</span></div>
+        <div><strong data-zh>主屏与锁屏</strong><strong data-en>Home & lock screen</strong><span data-zh>按系统支持范围应用</span><span data-en>Apply wherever Android supports</span></div>
+      </section>
+
+      <section class="section" id="features">
+        <div class="section-heading">
+          <span class="section-kicker">01</span>
+          <div>
+            <h2><span data-zh>简单设置，自动运行</span><span data-en>Set it once. Let it run.</span></h2>
+            <p><span data-zh>没有账户、广告、分析工具或云端同步。</span><span data-en>No account, ads, analytics, or cloud sync.</span></p>
+          </div>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span class="feature-number">01</span>
+            <h3><span data-zh>选择两张图片</span><span data-en>Choose two images</span></h3>
+            <p><span data-zh>为浅色和深色模式分别选择本地图片。</span><span data-en>Pick one local image for each system theme.</span></p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-number">02</span>
+            <h3><span data-zh>调整显示方式</span><span data-en>Frame them your way</span></h3>
+            <p><span data-zh>拖动、缩放，并选择裁剪填充、完整显示或拉伸。</span><span data-en>Pan, zoom, fill, fit, or stretch each wallpaper.</span></p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-number">03</span>
+            <h3><span data-zh>启用动态壁纸</span><span data-en>Enable the wallpaper</span></h3>
+            <p><span data-zh>在 Android 预览中选择主屏、锁屏或两者。</span><span data-en>Choose the home screen, lock screen, or both in Android.</span></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section showcase">
+        <div class="section-heading">
+          <span class="section-kicker">02</span>
+          <div>
+            <h2><span data-zh>同一个桌面，两种氛围</span><span data-en>One home screen, two moods</span></h2>
+            <p><span data-zh>切换系统主题，壁纸随之变化。</span><span data-en>Change the system theme and your wallpaper follows.</span></p>
+          </div>
+        </div>
+        <div class="showcase-grid">
+          <figure>
+            <img src="/assets/home-light.png" alt="Android home screen in light mode" loading="lazy" />
+            <figcaption><span data-zh>浅色模式</span><span data-en>Light mode</span></figcaption>
+          </figure>
+          <figure>
+            <img src="/assets/home-dark.png" alt="Android home screen in dark mode" loading="lazy" />
+            <figcaption><span data-zh>深色模式</span><span data-en>Dark mode</span></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section install-section" id="install">
+        <div class="section-heading">
+          <span class="section-kicker">03</span>
+          <div>
+            <h2><span data-zh>安装只需几步</span><span data-en>Install in a few steps</span></h2>
+            <p><span data-zh>APK 经过正式证书签名，可在 Android 7.0 及以上版本运行。</span><span data-en>The signed APK supports Android 7.0 and newer.</span></p>
+          </div>
+        </div>
+        <ol class="install-list">
+          <li><span class="step">1</span><div><strong data-zh>下载 APK</strong><strong data-en>Download the APK</strong><p data-zh>点击本站的下载按钮，获取最新正式版本。</p><p data-en>Use the download button on this site for the latest release.</p></div></li>
+          <li><span class="step">2</span><div><strong data-zh>允许本次安装</strong><strong data-en>Allow this installation</strong><p data-zh>Android 如有提示，请允许浏览器或文件管理器“安装未知应用”。</p><p data-en>If prompted, allow your browser or file manager to install unknown apps.</p></div></li>
+          <li><span class="step">3</span><div><strong data-zh>选择并启用壁纸</strong><strong data-en>Choose and enable</strong><p data-zh>导入浅色和深色图片，然后点击“启用自适应壁纸”。</p><p data-en>Import both images, then tap “Enable adaptive wallpaper.”</p></div></li>
+        </ol>
+        <div class="download-card">
+          <div>
+            <span class="download-label">AdaptiveWallpaper v2.0.0</span>
+            <strong><span data-zh>已准备好开始了吗？</span><span data-en>Ready to get started?</span></strong>
+            <a class="checksum-link" href="/download/AdaptiveWallpaper.apk.sha256">
+              <span data-zh>查看 SHA-256 校验文件</span><span data-en>View SHA-256 checksum</span>
+            </a>
+          </div>
+          <a class="button button-primary" href="/download/AdaptiveWallpaper.apk" download>
+            <span data-zh>下载最新版</span><span data-en>Download latest</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-brand">
+        <img src="/assets/app-icon.png" alt="" width="34" height="34" />
+        <div><strong>AdaptiveWallpaper</strong><span>Apache License 2.0</span></div>
+      </div>
+      <div class="footer-links">
+        <a href="/privacy/"><span data-zh>隐私说明</span><span data-en>Privacy</span></a>
+        <a href="https://github.com/Lei-Tin/AdaptiveWallpaper"><span data-zh>源代码</span><span data-en>Source code</span></a>
+        <a href="https://github.com/Lei-Tin/AdaptiveWallpaper/releases"><span data-zh>GitHub 镜像</span><span data-en>GitHub mirror</span></a>
+      </div>
+    </footer>
+  </body>
+</html>
