@@ -103,6 +103,9 @@ h1 em { color: var(--accent); font-style: normal; }
 .hero-visual::before { content: ""; position: absolute; width: 360px; height: 360px; border-radius: 50%; background: rgba(123, 105, 255, 0.2); filter: blur(80px); }
 .phone-frame { position: relative; z-index: 1; width: min(315px, 70vw); padding: 8px; background: #262a3e; border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 39px; box-shadow: 0 48px 100px rgba(0, 0, 0, 0.48), inset 0 0 0 1px rgba(0, 0, 0, 0.7); transform: rotate(2deg); }
 .phone-frame img { border-radius: 31px; }
+.phone-frame img[data-en] { display: none; }
+html[data-language="en"] .phone-frame img[data-zh] { display: none; }
+html[data-language="en"] .phone-frame img[data-en] { display: block; }
 .mode-card { position: absolute; z-index: 2; min-width: 104px; padding: 13px 18px; border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 15px; backdrop-filter: blur(16px); font-size: 0.86rem; font-weight: 720; box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3); }
 .mode-card-light { top: 92px; left: 8px; color: #23253a; background: rgba(247, 239, 225, 0.9); transform: rotate(-7deg); }
 .mode-card-dark { right: 0; bottom: 84px; background: rgba(31, 34, 56, 0.9); transform: rotate(7deg); }

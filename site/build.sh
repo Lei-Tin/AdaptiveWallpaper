@@ -17,6 +17,7 @@ cp "$SITE_DIR/styles.css" "$SITE_DIR/app.js" "$SITE_DIR/_headers" "$OUTPUT_DIR/"
 cp "$SITE_DIR/privacy/index.html" "$OUTPUT_DIR/privacy/index.html"
 cp "$SITE_DIR/../docs/images/app-icon.png" "$OUTPUT_DIR/assets/app-icon.png"
 cp "$SITE_DIR/../docs/images/app-main.png" "$OUTPUT_DIR/assets/app-main.png"
+cp "$SITE_DIR/../docs/images/app-main-en.png" "$OUTPUT_DIR/assets/app-main-en.png"
 cp "$SITE_DIR/../docs/images/home-light.png" "$OUTPUT_DIR/assets/home-light.png"
 cp "$SITE_DIR/../docs/images/home-dark.png" "$OUTPUT_DIR/assets/home-dark.png"
 
