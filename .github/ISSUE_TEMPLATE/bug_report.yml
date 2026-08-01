@@ -1,0 +1,65 @@
+name: Bug report
+description: Report a reproducible problem with AdaptiveWallpaper
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping improve AdaptiveWallpaper. Do not attach private wallpaper images unless they are essential and safe to share.
+  - type: input
+    id: version
+    attributes:
+      label: App version
+      placeholder: v1.0.2
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Device model
+      placeholder: Xiaomi Pad 8 Pro
+    validations:
+      required: true
+  - type: input
+    id: android
+    attributes:
+      label: Android and system version
+      placeholder: Android 16 / HyperOS 3.0.307.0
+    validations:
+      required: true
+  - type: dropdown
+    id: destination
+    attributes:
+      label: Wallpaper destination
+      options:
+        - Home screen
+        - Lock screen
+        - Home and lock screens
+        - Not applicable
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Include exact taps and system theme changes.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots
+      description: Optional. Remove personal information before posting.
