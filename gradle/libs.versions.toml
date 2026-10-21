@@ -7,7 +7,7 @@ espressoCore = "3.7.0"
 appcompat = "1.6.1"
 material = "1.14.0"
 activityKtx = "1.13.0"
-constraintlayout = "2.1.4"
+constraintlayout = "2.2.2"
 exifInterface = "1.4.2"
 
 [libraries]
